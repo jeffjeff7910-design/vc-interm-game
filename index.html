@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VC Intern Simulator 🏢☕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-container">
+  <header>
+    <h1>🏢 <span id="firmNameHeader">Sunbeam Ventures</span> <span class="subtitle">— Intern Life</span></h1>
+    <div id="hud">
+      <div class="stat">🕘 <span id="clock">9:00 AM</span></div>
+      <div class="stat stat-bar">
+        <span>⚡ Energy</span>
+        <div class="bar"><div id="energyFill" class="fill energy"></div></div>
+      </div>
+      <div class="stat stat-bar">
+        <span>⭐ Rep</span>
+        <div class="bar"><div id="repFill" class="fill rep"></div></div>
+      </div>
+      <div class="stat">✅ <span id="tasksDone">0</span> done</div>
+    </div>
+  </header>
+
+  <div id="main-area">
+    <div id="canvasWrap">
+      <canvas id="gameCanvas" width="720" height="560"></canvas>
+      <div id="toast"></div>
+    </div>
+    <aside id="taskPanel">
+      <h2>📋 To-Do</h2>
+      <ul id="taskList"></ul>
+      <p class="hint">WASD / Arrows — move<br>SPACE — interact</p>
+    </aside>
+  </div>
+</div>
+
+<div id="startOverlay" class="overlay">
+  <div class="overlay-card">
+    <h1>☕ Welcome, Intern! ☕</h1>
+    <p>It's your first day at <strong id="firmNameWelcome">Sunbeam Ventures</strong>. Review pitch decks, take meeting notes, run the printer, and — most importantly — keep the partners caffeinated. Survive until 6&nbsp;PM with your reputation intact!</p>
+    <ul class="controls-list">
+      <li><strong>WASD</strong> or <strong>Arrow Keys</strong> — walk around the office, and steer mini-games</li>
+      <li><strong>SPACE</strong> — interact, and time button-presses in mini-games</li>
+      <li><strong>Mouse</strong> — pick pitch decisions and memory-game answers</li>
+    </ul>
+    <div class="customize">
+      <canvas id="previewCanvas" width="110" height="130"></canvas>
+      <div class="swatch-col">
+        <p>Firm Name</p>
+        <input type="text" id="firmNameInput" maxlength="28" placeholder="Sunbeam Ventures">
+        <p>Hair</p>
+        <div class="swatch-row" id="hairSwatches"></div>
+        <p>Outfit</p>
+        <div class="swatch-row" id="outfitSwatches"></div>
+      </div>
+    </div>
+    <button id="startBtn">Start My Internship 🚀</button>
+  </div>
+</div>
+
+<div id="minigameOverlay" class="overlay hidden">
+  <div class="overlay-card" id="minigameCard"></div>
+</div>
+
+<div id="endOverlay" class="overlay hidden">
+  <div class="overlay-card" id="endCard"></div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
